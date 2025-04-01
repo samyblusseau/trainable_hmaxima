@@ -3,7 +3,8 @@ data_type=trp1 # trp1 # yellow # cellpose
 exp_num=1
 N=50
 val_or_test=test # val or test
-count_only=0
+count_only=0 # 1 or 0
+eval_h_pred_and_rec=1 # 1 or 0
 alpha=1
 beta=1
 
@@ -71,4 +72,4 @@ fi
 exp_dir=./experiments/$exp_name
 res_dir=$exp_dir/res_$val_or_test
 
-python eval.py --res_dir $res_dir --gt_count_dir $gt_count_dir --gt_h_path $gt_h_path --gt_rec_dir $gt_rec_dir --count_only $count_only 
+python eval.py --res_dir $res_dir --gt_count_dir $gt_count_dir --gt_h_path $gt_h_path --gt_rec_dir $gt_rec_dir --eval_h_pred_and_rec $eval_h_pred_and_rec
