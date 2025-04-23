@@ -6,7 +6,7 @@ import numpy as np
 import pdb
 import argparse
 import os
-from skimage.morphology import square, dilation, label #, square, opening, closing, label
+from skimage.morphology import square, dilation, label
 from skimage.measure import regionprops
 from skimage.transform import resize
 from skimage import io
@@ -102,9 +102,12 @@ for fname in L:
     x = ml.opening2d(tmp, b, strides = (1,1), padding = "same")
     imAF = ml.closing2d(x, b, strides = (1,1), padding = "same")
     np.save(os.path.join(input_np_dir, im_id+'_after_opening_closing.npy'), imAF)
-    imAF = imAF.numpy()[0,:,:,0]
 
+    ##########
+    # What follows is not necessary for the counting-loss-only experiments
+    #########
     tstart = time.time()
+    imAF = imAF.numpy()[0,:,:,0]
     max_h=imAF.max()-imAF.min()
     hstar=0
     besterr=500
