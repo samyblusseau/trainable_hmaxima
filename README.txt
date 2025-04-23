@@ -14,3 +14,10 @@ TRP1 experiments
 Note that if you only wish to runcounting-loss-only experiments, you may comment the lines 109 and below in preprocess_trp1.py, since that part is meant to compute optimal h values anf the corresponding h-reconstruction, not necessary for the counting loss.
 
 
+For *** training *** :
+
+- Edit train.sh: make sure data_type=trp1, and set the other options as desired (number of epochs, modified backpropagation mode, experiment number, N value, counting loss only or not, alpha and beta values)
+
+- Run the train.sh script.
+
+
