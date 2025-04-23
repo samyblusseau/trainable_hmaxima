@@ -2,10 +2,10 @@
 
 nepochs=1
 bp_mode=minus_one #minus_one #Puissance_N
-data_type=trp1 # trp1 # yellow # cellpose
+data_type=trp1 # trp1 # fnc # cellpose
 exp_num=1
 N=50
-count_only=0
+count_only=0 #0 or 1
 alpha=1
 beta=1
 
@@ -23,24 +23,16 @@ elif [ $data_type == 'yellow' ]; then
     
     #echo "Training on yellow cells"
 
-    before_preproc_data_dir=/home/sysadm/Documents/morphomat/biblio/journaux/jmiv/hmax/experiments/JMIV_cell_counting-master/yellow_cells/fluocells_organised_with_zeros_official_testsplit/
-    train_set=set1
-    preproc_input_dir=../yellow_cells/data/best_h_dataset255_yellow_cells_debug/input_np/$train_set
-    best_rec_dir=../yellow_cells/data/best_h_dataset255_yellow_cells_debug/output_np/$train_set
-    batch_size=17
+    echo "Not ready yet, coming soon."
     
 elif [ $data_type == 'cellpose' ]; then
     
     #echo "Training on cellpose"
 
-    before_preproc_data_dir=/home/sysadm/Documents/morphomat/biblio/journaux/jmiv/hmax/experiments/JMIV_cell_counting-master/cellpose/CellPose_converted_new/
-    train_set=train
-    preproc_input_dir=../cellpose/best_h_dataset255_CellPose_converted/input_np/$train_set
-    best_rec_dir=../cellpose/best_h_dataset255_CellPose_converted/output_np/$train_set
-    batch_size=15
+    echo "Not ready yet, coming soon."
 
 else
-    echo "Provide correct data type (green/yellow/cellpose)"
+    echo "Provide correct data type (trp1/fnc/cellpose)"
 fi
 
 if [ $count_only == 1 ]; then
